@@ -1,0 +1,13 @@
+metadata:
+  name: "Ensure Security Group has a description"
+  id: CKV2_AWS_CUSTOM_1
+  category: "GENERAL_SECURITY"
+scope:
+  provider: "aws"
+definition:
+  cond_type: "attribute"
+  resource_types:
+    - "aws_security_group"
+  attribute:  "description"
+  operator:  "exists"
+  

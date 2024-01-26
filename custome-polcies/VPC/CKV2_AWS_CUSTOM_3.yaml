@@ -1,0 +1,18 @@
+metadata:
+  name: "Ensure VPC private endpoint is enabled\n
+  \tGuied : https://xyx.xom/CK.mdV2_AWS_CUSTOM_3.md
+  id: CKV2_AWS_CUSTOM_3
+  category: "NETWORKING"
+scope:
+  provider: "aws"
+  cond_type: "attribute"
+  resource_types:
+    - "aws_vpc_endpoint"
+  attribue: "private_dns_enabled"
+  operator: "equals"
+  value: "true"
+  cond_type: "attribute"
+  resource_types:
+    - "aws_vpc_endpoint_type"
+  operator: "equals"
+  value: "Interface"

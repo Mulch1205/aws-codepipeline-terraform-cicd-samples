@@ -1,0 +1,36 @@
+metadata:
+  name: "Ensure EC2 metdata configured correctly\n
+  \tGuied : https://xyx.xom/CKV2_AWS_CUSTOM_EC2_1.md
+  id: CKV2_AWS_CUSTOM_EC2_1
+  category: "GENERAL"
+scope:
+  provider: "aws"
+definition:
+  and: 
+    - cond_type: "attribute"
+      resource_types:
+        - "aws_instance"
+      attribue: "metadata_options.http_endpoint"
+      operator: "equals"
+      value: "enabled"
+    - cond_type: "attribute"
+      resource_types:
+        - "aws_instance"
+      attribue: "metadata_options.http_tokens"
+      operator: "equals"
+      value: "required"
+    - cond_type: "attribute"
+      resource_types: 
+        - "aws_instance"
+      attribue: "metadata_options.http_put_response_hop_limit"
+      operator: "equals"
+      value: "1"
+    - cond_type: "attribute"
+      resource_types: 
+        - "aws_instance"
+      attribue: "metadata_options.instance_metadata_tags"
+      operator: "equals"
+      value: "enabled"
+
+
+ 
